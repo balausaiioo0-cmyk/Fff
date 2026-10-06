@@ -1,0 +1,25 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const catFactBtn = document.getElementById('catFactBtn');
+    const factText = document.getElementById('factText');
+
+    const catFacts = [
+        "🐾 Мысықтар өмірінің 70%-ын ұйқымен өткізеді.",
+        "🐾 Мысықтың мұрнының ізі — адамның саусақ ізі сияқты қайталанбас ерекше болады.",
+        "🐾 Мысықтар 100-ден астам түрлі дыбыстар шығара алады!",
+        "🐾 Мысық өзінің бойынан 5 есе биіктікке секіре алады.",
+        "🐾 Мысықтардың миы адам миына 90% ұқсас келеді.",
+        "🐾 Мысықтың мұрты оған кеңістікті сезінуге және тесіктерден өте алам ба, жоқ па соны білуге көмектеседі."
+    ];
+
+    if (catFactBtn && factText) {
+        catFactBtn.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            factText.innerText = catFacts[randomIndex];
+            
+            factText.style.opacity = 0;
+            setTimeout(() => {
+                factText.style.opacity = 1;
+            }, 150);
+        });
+    }
+});
